@@ -51,4 +51,7 @@ add_executable(data_structures_and_algorhitms lectures_examples/permutations.cpp
         algotester/Lab3/b3.cpp
         lectures_examples/segments_tree_max.cpp
         lectures_examples/segments_tree_sum.cpp
+        data_structures/linked_list/double_linked_list.cpp
+        data_structures/linked_list/singly_linked_list.cpp
+        lectures_examples/dots_connection_distance.cpp
 )

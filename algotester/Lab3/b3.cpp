@@ -21,7 +21,7 @@ int main() {
     for (int i = n - 1; i >= 0; i--) {
         for (int j = 0; j <= n / 2; j++) {
             dp[i][j] = dp[i + 1][j];
-            if (j >= 1 && i + 1 < n && dp[i + 2][j - 1] != INF)
+            if (j > 0 && i + 1 < n && dp[i + 2][j - 1] != INF)
                 dp[i][j] = min(dp[i][j], dp[i + 2][j - 1] + balance[i]);
         }
     }
