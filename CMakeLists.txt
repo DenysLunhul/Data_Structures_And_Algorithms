@@ -56,4 +56,7 @@ add_executable(data_structures_and_algorhitms lectures_examples/permutations.cpp
         lectures_examples/dots_connection_distance.cpp
         data_structures/heap.cpp
         sorting_algorithms/heap_sort.cpp
+        sorting_algorithms/merge_sort_.cpp
+        sorting_algorithms/quick_sort_.cpp
+        lectures_examples/count_inversions_in_pernutation.cpp
 )
