@@ -15,11 +15,11 @@ add_executable(data_structures_and_algorhitms lectures_examples/permutations.cpp
         algotester/Lab1/b1.cpp
         algotester/Lab1/b2.cpp
         algotester/Lab1/b3.cpp
-        sorting_algorithms/bubble.cpp
-        sorting_algorithms/insertion.cpp
-        sorting_algorithms/selection.cpp
-        sorting_algorithms/merge.cpp
-        sorting_algorithms/quick.cpp
+        sorting_algorithms/bubble_sort.cpp
+        sorting_algorithms/insertion_sort.cpp
+        sorting_algorithms/selection_sort.cpp
+        sorting_algorithms/merge_sort.cpp
+        sorting_algorithms/quick_sort.cpp
         test.cpp
         lectures_examples/prefix_sum_1d.cpp
         lectures_examples/find_sum_in_array.cpp
@@ -49,9 +49,11 @@ add_executable(data_structures_and_algorhitms lectures_examples/permutations.cpp
         algotester/Lab3/b1.cpp
         algotester/Lab3/b2.cpp
         algotester/Lab3/b3.cpp
-        lectures_examples/segments_tree_max.cpp
-        lectures_examples/segments_tree_sum.cpp
+        data_structures/segment_tree/segments_tree_max.cpp
+        data_structures/segment_tree/segments_tree_sum.cpp
         data_structures/linked_list/double_linked_list.cpp
         data_structures/linked_list/singly_linked_list.cpp
         lectures_examples/dots_connection_distance.cpp
+        data_structures/heap.cpp
+        sorting_algorithms/heap_sort.cpp
 )
