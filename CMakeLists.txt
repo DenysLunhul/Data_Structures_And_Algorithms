@@ -59,4 +59,8 @@ add_executable(data_structures_and_algorhitms lectures_examples/permutations.cpp
         sorting_algorithms/merge_sort_.cpp
         sorting_algorithms/quick_sort_.cpp
         lectures_examples/count_inversions_in_pernutation.cpp
+        algotester/Lab3/b3_alternative.cpp
+        algotester_practice.cpp
+        lectures_examples/longest_mega_segment.cpp
+        lectures_examples/cnut_morris_prat_algorithm.cpp
 )
