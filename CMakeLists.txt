@@ -64,4 +64,10 @@ add_executable(data_structures_and_algorhitms lectures_examples/permutations.cpp
         lectures_examples/longest_mega_segment.cpp
         lectures_examples/cnut_morris_prat_algorithm.cpp
         lectures_examples/backpack_task.cpp
+        lectures_examples/sliding_window_min_element.cpp
+        lectures_examples/biggest_0_rectangle_area.cpp
+        temp/bs_1.cpp
+        temp/bs_2.cpp
+        temp/bs_3.cpp
+        temp/bs_4.cpp
 )
