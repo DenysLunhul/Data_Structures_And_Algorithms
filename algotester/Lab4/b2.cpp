@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<long long> dijkstra(int start, int n, vector<vector<pair<int,int>>>& graph){
+vector<long long> dijkstra(int start, int n , vector<vector<pair<int,int>>>& graph){
     vector<long long> dist(n + 1, LLONG_MAX);
     dist[start] = 0;
 

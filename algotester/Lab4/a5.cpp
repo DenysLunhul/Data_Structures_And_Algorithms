@@ -40,9 +40,7 @@ int main() {
     for (int c = 1; c <= n; c++) {
         if (color[c].size() < 2) continue;
 
-        sort(color[c].begin(), color[c].end(), [](int a, int b) {
-            return tin[a] < tin[b];
-        });
+        sort(color[c].begin(), color[c].end(), [](int a, int b) {return tin[a] < tin[b];});
 
         for (int i = 0; i < color[c].size() - 1; i++) {
             int u = color[c][i];
