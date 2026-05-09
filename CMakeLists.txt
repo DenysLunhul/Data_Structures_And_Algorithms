@@ -70,4 +70,5 @@ add_executable(data_structures_and_algorhitms lectures_examples/permutations.cpp
         temp/bs_2.cpp
         temp/bs_3.cpp
         temp/bs_4.cpp
+        algotester/Practice1/a.cpp
 )
