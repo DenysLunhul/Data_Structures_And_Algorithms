@@ -1,13 +1,13 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
 
-int findIndex(vector<int>& a, int val) {
-    for (int i = 0; i < a.size(); i++)
-        if (a[i] == val)
+int findIdx(const vector<int>& v, int val) {
+    for (int i = 0; i < v.size(); i++) {
+        if (v[i] == val) {
             return i;
+        }
+    }
     return -1;
 }
 
@@ -15,13 +15,14 @@ int findIndex(vector<int>& a, int val) {
 int main() {
     int n;
     cin >> n;
-
-    vector<int> x1(n), y1(n), x2(n), y2(n), xs, ys;
+    vector<int> x1(n), x2(n), y1(n), y2(n), xs, ys;
 
     for (int i = 0; i < n; i++) {
         cin >> x1[i] >> y1[i] >> x2[i] >> y2[i];
-        xs.push_back(x1[i]); xs.push_back(x2[i]);
-        ys.push_back(y1[i]); ys.push_back(y2[i]);
+        xs.push_back(x1[i]);
+        xs.push_back(x2[i]);
+        ys.push_back(y1[i]);
+        ys.push_back(y2[i]);
     }
 
     sort(xs.begin(), xs.end());
@@ -36,25 +37,30 @@ int main() {
         if (i == 0 || ys[i] != ys[i-1])
             uys.push_back(ys[i]);
 
-    int W = xs.size() - 1, H = ys.size() - 1;
-    vector<char> grid(W * H, 0);
 
-    for (int r = 0; r < n; r++) {
-        int lx = findIndex(xs, x1[r]);
-        int rx = findIndex(xs, x2[r]);
-        int ly = findIndex(ys, y1[r]);
-        int ry = findIndex(ys, y2[r]);
-        for (int i = lx; i < rx; i++)
-            for (int j = ly; j < ry; j++)
-                grid[i * H + j] = 1;
+    int R = uxs.size() - 1;
+    int C = uys.size() - 1;
+    vector<vector<char>> grid(R, vector<char>(C, '0'));
+
+    for (int i = 0; i < n; i++) {
+        int lx = findIdx(uxs, x1[i]);
+        int rx = findIdx(uxs, x2[i]);
+        int ly = findIdx(uys, y1[i]);
+        int ry = findIdx(uys, y2[i]);
+        for (int r = lx; r < rx; r++) {
+            for (int c = ly; c < ry; c++) {
+                grid[r][c] = '1';
+            }
+        }
     }
-
     long long area = 0;
-    for (int i = 0; i < W; i++)
-        for (int j = 0; j < H; j++)
-            if (grid[i * H + j])
-                area += (xs[i+1] - xs[i]) * (ys[j+1] - ys[j]);
-
+    for (int i = 0; i < R; i++) {
+        for (int j = 0; j < C; j++) {
+            if (grid[i][j] == '1') {
+                area += (uxs[i+1] - uxs[i]) * (uys[j+1] - uys[j]);
+            }
+        }
+    }
     cout << area;
     return 0;
 }

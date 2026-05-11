@@ -21,14 +21,16 @@ int main() {
         int a, b, c;
         cin >> a >> b >> c;
         int g = gcd(gcd(abs(a), abs(b)), abs(c));
-        if (g > 0) { a /= g; b /= g; c /= g; }
+        a /= g;
+        b /= g;
+        c /= g;
         if (a < 0 || (a == 0 && b < 0)) { a=-a; b=-b; c=-c; }
         if (seen.insert({a, b, c}).second)
             lines.emplace_back(a, b, c);
     }
 
     long long result = 1;
-    for (int i = 0; i < (int)lines.size(); i++) {
+    for (int i = 0; i < lines.size(); i++) {
         auto [a1, b1, c1] = lines[i];
         set<Vec2> pts;
         for (int j = 0; j < i; j++) {
