@@ -65,19 +65,15 @@ int main() {
         cout << "--- Analysis of function: " << f_info.name << " ---" << endl;
         cout << "x\t\t | f(x)\t\t | f'(x) approx" << endl;
         cout << "----------------------------------------------------" << endl;
-
         dataFile << "# x f(x) derivative\n";
 
         for (double x = f_info.xstart; x <= f_info.xend; x += dx) {
             double val = f_info.ptr(x);
             double d_val = derive(f_info.ptr, x, h);
-
             cout << x << "\t | " << val << "\t | " << d_val << endl;
             dataFile << x << " " << val << " " << d_val << '\n';
         }
-
         cout << endl;
-
         script << "set output '" << f_info.plotName << "'\n";
         script << "set title '" << f_info.name << " and its derivative' font 'Arial,15'\n";
         script << "set xrange [" << f_info.xstart << ":" << f_info.xend << "]\n";
@@ -85,12 +81,9 @@ int main() {
         script << "plot '" << f_info.fileName << "' using 1:2 with lines ls 1 title '" << f_info.name << "', ";
         script << "'" << f_info.fileName << "' using 1:3 with lines ls 2 title \"f'(x) (derivative)\"\n";
     }
-
     script.close();
-
     cout << "Data files and gnuplot script were generated." << endl;
     cout << "Run this command to create plots:" << endl;
     cout << "gnuplot plot_all.gp" << endl;
-
     return 0;
 }
